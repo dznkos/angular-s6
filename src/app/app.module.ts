@@ -5,8 +5,9 @@ import { AppComponent } from './app.component';
 import { CabeceraComponent } from './cabecera/cabecera.component';
 import { PieComponent } from './pie/pie.component';
 import { CursosComponent } from './cursos/cursos.component';
-import { FormsModule } from '@angular/forms';
+
 import { AlumnosComponent } from './alumnos/alumnos.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,7 @@ import { AlumnosComponent } from './alumnos/alumnos.component';
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

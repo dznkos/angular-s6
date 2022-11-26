@@ -5,7 +5,7 @@ export class Alumno {
  constructor(
   public id: number,
   public nombre: string,
-  public correo: string,
+  public email: string,
   public promedio: number,
  ) { }
 }
