@@ -10,22 +10,23 @@ import { Alumnos } from './alumno.json';
 })
 export class AlumnosComponent implements OnInit {
 
+  //crea la variable
   alumnos?: Alumno[];
 
-  id: number = 0;
+  id = 0;
   nombre = '';
   correo = '';
-  promedio : number = 0;
-  estado = '';
-
+  promedio = 0;
 
   mostrar = true;
   txtToggle = 'Ocultar'
 
   constructor() { }
 
-  ngOnInit(): void {
+  ngOnInit():void {
     this.alumnos = Alumnos
+
+
   }
 
   toggle():void {
@@ -33,18 +34,24 @@ export class AlumnosComponent implements OnInit {
     this.txtToggle = !this.mostrar ? 'Ocultar' : 'Mostrar'
   }
 
-  add():void {
-
-    const newAlumno = new Alumno(
+  add() {
+    var newAlumno = new Alumno(
       this.id,
       this.nombre,
       this.correo,
       this.promedio
     )
+    this.alumnos!.push(newAlumno)
+  }
 
-    console.log(newAlumno)
+  remove(index: number){
 
-    this.alumnos?.push(newAlumno)
+    this.alumnos = this.alumnos?.filter( alumno => alumno.id !== index)
+  }
+
+  modify(i: number) {
+
+    var modalumno = this.alumnos?.find( alumno => alumno.id === i )
 
 
   }
