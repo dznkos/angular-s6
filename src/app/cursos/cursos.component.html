@@ -1,0 +1,27 @@
+<div class="card border-primary mb-3">
+  <div class="card-header">Cursos</div>
+  <div class="card-body text-primary">
+    <h5 class="card-title">Listado de Cursos</h5>
+
+    <table class="table">
+      <thead>
+        <tr>
+          <th>id</th>
+          <th>nombre</th>
+          <th>creditos</th>
+          <th>horas</th>
+
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let cur of cursos" [ngClass]="cur.horas > 30 ? 'text-danger ' : 'fst-italic' " >
+          <td>{{ cur.id }}</td>
+          <td>{{ cur.nombre }}</td>
+          <td>{{ cur.creditos }}</td>
+          <td>{{ cur.horas }}</td>
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
+</div>

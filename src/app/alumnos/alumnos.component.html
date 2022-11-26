@@ -1,0 +1,35 @@
+<div class="card border-primary mb-3">
+  <div class="card-header">Alumnos</div>
+  <div class="card-body text-primary">
+    <h5 class="card-title">Listado de Alumnos</h5>
+    <input type="text" placeholder="id" [ngModel]="id">
+    <input type="text" placeholder="nombre" [ngModel]="nombre">
+    <input type="text" placeholder="correo" [ngModel]="correo"><br>
+    <input type="text" placeholder="promedio" [ngModel]="promedio">
+    <input type="text" placeholder="estado" [ngModel]="estado">
+    <button class="btn btn-outline-primary mx-2" (click)="add()">Add</button>
+    <button class="btn btn-danger float-end" (click)="toggle()" >{{ txtToggle }}</button>
+
+    <table class="table" *ngIf="mostrar">
+      <thead>
+        <tr>
+          <th>id</th>
+          <th>nombre</th>
+          <th>creditos</th>
+          <th>horas</th>
+
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let alumno of alumnos" [ngClass]="alumno.promedio < 14 ? 'text-danger ' : 'fst-italic' " >
+          <td>{{ alumno.id }}</td>
+          <td>{{ alumno.nombre }}</td>
+          <td>{{ alumno.correo }}</td>
+          <td>{{ alumno.promedio }}</td>
+          <td>{{ alumno.promedio > 13 ? 'Aprobado' : 'Desaprobado'  }}</td>
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
+</div>
